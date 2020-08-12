@@ -1,5 +1,8 @@
 # cryptor_remake
-Simple cryptor on Ruby                                           
+Simple cryptor on Ruby  
+# NEW:               
+1) Bug fix       
+2) Less output             
 # INSTALL:                                                      
 git clone https://github.com/zertmark/cryptor_remake.git && cd cryptor_remake && chmod +x install.sh && ./install.sh                                      
 # RUN:

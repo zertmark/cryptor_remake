@@ -21,7 +21,7 @@ def parse()
    exit()
   end
  end
- if !File.exist?($options[:path]) 
+ if !File.exist?($options[:path].to_s) 
   print "\nError:invalid path"
   exit()
  end  
@@ -41,13 +41,11 @@ def main()
  search()
 end 
 def search()
- print "\nParsing..."
  if File.file?($options[:path].to_s)
   print "\nEncrypting... #{path}"
   encrypt($options[:path])
   File.delete(path)
  else 
-  print "Dir"
   Dir.chdir $options[:path]
   Dir.glob("**/**").each do |path|
    if File.file?(path)

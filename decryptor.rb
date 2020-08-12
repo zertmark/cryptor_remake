@@ -21,9 +21,13 @@ def parse()
    exit()
   end
  end 
- if !File.exist?($options[:path])
+ if !File.exist?($options[:path].to_s) 
    print "\nError:invalid path"
    exit()
+ end
+ if $options[:key] == ""
+  print ("\nError:empty key")
+  exit()
  end
 end
 def get_key()
@@ -45,10 +49,10 @@ def search()
   Dir.chdir $options[:path]
   Dir.glob("**/**").each do |path|
    if File.file?(path)
-    print "\nEncrypting: #{path}"
+    print "\nDecrypting: #{path}"
    #write(encrypt(File.readlines(path)),path+'.crp')
     decrypt(path)
-    print "\nRemoving original file"
+    print "\nRemoving encrypted file"
     File.delete(path)
    else
     print "\nSkipping #{path} because it isn't a file"

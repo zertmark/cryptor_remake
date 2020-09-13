@@ -31,8 +31,8 @@ def parse()
  end
 end
 def get_key()
- $key=$options[:key]
- print "\nGet key: #{$key}"
+ $key=$options[:key].to_s
+ print "\nUsing key: #{$key}"
 end 
 def main()
  parse()

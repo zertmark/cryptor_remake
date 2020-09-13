@@ -30,6 +30,8 @@ def generate_key()
  if $options[:key] == ""
    $key=AES.key
    print "\nGenerated key: #{$key}"
+ else
+  $key=$options[:key].to_s
  end
  $iv=AES.iv(:base_64)
  print "\nGenerated random initialization vector: #{$iv}"
